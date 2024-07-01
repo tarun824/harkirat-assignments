@@ -43,7 +43,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
-
+var allTodos = [{ "id": 1, "title": "title", "description": "description" }];
 app.use(bodyParser.json());
+
+app.get("/delete/todos/:id", (req, res) => {
+
+});
+
 
 module.exports = app;
