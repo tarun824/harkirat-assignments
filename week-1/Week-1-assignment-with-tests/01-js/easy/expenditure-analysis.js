@@ -55,7 +55,6 @@ function calculateTotalSpentByCategory(transactions) {
     ///check if that element is present
     if (elemen) {
       elemen.totalSpent = elemen.totalSpent + traEle.price;
-    } else {
       returnElement.push({ category: traEle.category, totalSpent: traEle.price });
     }
   });
