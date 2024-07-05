@@ -54,7 +54,7 @@ const Course = mongoose.model("Course", courseSchema);
 async function connectMongoDb() {
   console.log("Connecting to MongoDb");
   ///Third Connection with DB
-  await mongoose.connect("mongodb://127.0.0.1:27017/courses", {
+  await mongoose.connect("Your DB", {
     //  useNewUrlParser: true,
     // useUnifiedTopology: true
   });
