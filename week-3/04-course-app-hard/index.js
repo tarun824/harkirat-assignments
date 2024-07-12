@@ -52,13 +52,12 @@ const Admin = mongoose.model("Admin", adminSchema);
 const Course = mongoose.model("Course", courseSchema);
 
 async function connectMongoDb() {
-  console.log("Connecting to MongoDb");
+  console.log("mongodb://localhost:27017/courses");
   ///Third Connection with DB
-  await mongoose.connect("Your DB", {
+  await mongoose.connect("mongodb://127.0.0.1:27017/courses", {
     //  useNewUrlParser: true,
     // useUnifiedTopology: true
   });
-
 }
 connectMongoDb();
 // Admin routes
@@ -225,7 +224,7 @@ const userMiddleware = async (req, res, next) => {
   }
 };
 
-app.get('/users/courses', userMiddleware, async (req, res) => {
+app.get('/users/courses',  userMiddleware,async (req, res) => {
   // logic to list all courses
   let allCourses = await Course.find({});
   if (allCourses.length > 0) {
